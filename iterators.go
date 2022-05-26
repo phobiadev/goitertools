@@ -44,10 +44,10 @@ func ChainFromIterable[T any](iterables [][]T) []T {
 	return chained
 }
 
-func Compress[T any](data []T, selectors []int) {
+func Compress[T any](data []T, selectors []int) []T {
 	compressed := []T{}
 	for i, s := range data {
-		if selectors[i] {
+		if selectors[i] == 1 {
 			compressed = append(compressed, s)
 		}
 	}
